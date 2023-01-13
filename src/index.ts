@@ -45,6 +45,7 @@ export function setRandomNumber(num:number) {
   }
 }
 export function apply(ctx: Context) {
+  ctx.i18n.define('zh', require('./locales/zh'))
   ctx.command('jrrp')
     .alias('今日人品')
     .action(({ session }) => {
