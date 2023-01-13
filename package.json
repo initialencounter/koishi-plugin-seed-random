@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-jrrp",
-  "description": "今日人品",
+  "description": "今日人品，伪随机数学习",
   "version": "1.0.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -11,12 +11,12 @@
   "author": "initencounter <2911583893@qq.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/initialencounter/koishi-plugin-facejrrp.git"
+    "url": "git+https://github.com/initialencounter/koishi-plugin-jrrp.git"
   },
   "bugs": {
     "url": "https://github.com/initialencounter/koishi-plugin-jrrp/issues"
   },
-  "homepage": "https://github.com/initialencounter/koishi-plugin-jrrrp#readme",
+  "homepage": "https://github.com/initialencounter/koishi-plugin-jrrp#readme",
   "license": "MIT",
   "scripts": {},
   "keywords": [
