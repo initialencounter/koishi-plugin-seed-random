@@ -32,7 +32,12 @@ export const luck_simple = (num: number) => {
   }
 }
 
-export function setRandomNumber(num:number) {
+export function setRandomNumber(s:string) {
+  //将字符串转为10进制数
+  const buf = Buffer.from(s,'utf-8')
+  const decimal = buf.readInt8(0).toString(10)
+  var num = parseInt(decimal)
+  //以日期和userId字符串为种子，生成伪随机数
   while(1){
     const date = new Date()
     const numb:number = Math.abs(Math.sin(num + date.getDate()))
@@ -46,8 +51,8 @@ export function setRandomNumber(num:number) {
 }
 export function apply(ctx: Context) {
   ctx.i18n.define('zh', require('./locales/zh'))
-  ctx.command('jrrp')
-    .alias('今日人品')
+  ctx.command('今日人品')
+    .alias('jrrp')
     .action(({ session }) => {
       const luck_point: number = setRandomNumber(session.userId)
       const luck_text: string = luck_simple(luck_point)
@@ -55,5 +60,6 @@ export function apply(ctx: Context) {
         <at id="${session.userId}"/>
         您今日的幸运指数是${luck_point}/100(越低越好)，为"${luck_text}"
       </>`
+      
     })
 }
