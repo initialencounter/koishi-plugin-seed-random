@@ -49,7 +49,7 @@ export function apply(ctx: Context) {
   ctx.command('jrrp')
     .alias('今日人品')
     .action(({ session }) => {
-      const luck_point: number = setRandomNumber(295834)
+      const luck_point: number = setRandomNumber(session.userId)
       const luck_text: string = luck_simple(luck_point)
       return `<>
         <at id="${session.userId}"/>
